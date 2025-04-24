@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
 body {
     margin: 0;
@@ -6,12 +7,46 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #151417;
     color: #fff;
-    height: 300px;
-    width: 300px;
+    text-align: center;
+    width: 350px;
 }
 
-#on-extension {
-    background-color: linear-gradient(to right #152914, #1d3c18);
-    padding: 4px 8px;
+#toggleBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+select {
+    appearance: none;
+    font: inherit;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #222;
+    line-height: 1.6;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+
+    &:open {
+        background-color: #0D0E12;
+        border: none;
+    }
+
+    option {
+        background-color: #444;
+    }
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#toggleBtn {
     border-radius: 10px;
+    background-color: #7eda53;
 }

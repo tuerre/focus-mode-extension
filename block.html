@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sitio Bloqueado</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+        body {
+            background: linear-gradient(145deg, #1e1e20, #0e0e11);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            flex-direction: column;
+        }
+
+        img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .first-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .fm-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        #totalSitios {
+            font-size: 25px;
+            font-weight: bold;
+            color: #FFC400;
+        }
+
+        .sitiosBloqueados {
+            color: #919191;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blockInfo {
+            width: 420px;
+        }
+
+        .textAdvertensiment {
+            color: #DFD7AE;
+            margin-bottom: 20px;
+        }
+
+        .goToPopup {
+            width: 400px;
+        }
+
+        .goToPopup a {
+            color: #FFC400;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="first-info">
+            <img src="/avatar.png" alt="User default avatar">
+            <span class="fm-title">SITIO BLOQUEADO</span>
+
+            <div class="sitiosBloqueados">
+                <span id="totalSitios">0</span>
+                <span class="sitiosBloqueados">Sitios bloqueados</span>
+            </div>
+        </div>
+
+        <div class="blockInfo">
+            <p class="textAdvertensiment">
+                El sitio al que estás intentando ingresar,
+                <a id="siteName" href="#" style="color: #FFC400;"></a> ha sido bloqueado porque tienes el Focus Mode
+                activo.
+            </p>
+        </div>
+
+        <div class="goToPopup">
+            <p style="color: #C0C0C0;">
+                Para administrar tus sitios bloqueados, dirígete al
+                <a>Panel de extensión</a> y configura tus sitios para estar cómodo mientras te mantienes
+                enfocado. :D
+            </p>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const site = urlParams.get('site') || "desconocido";
+
+        document.getElementById('siteName').textContent = site;
+        document.getElementById('siteName').href = `https://${site}`;
+
+        chrome.storage.local.get('sitios', (data) => {
+            const total = data.sitios?.length || 0;
+            document.getElementById('totalSitios').textContent = total;
+        });
+
+    </script>
+</body>
+
+</html>

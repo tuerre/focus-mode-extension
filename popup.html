@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>ASD Focus Mode</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h1>dola</h1>
+    <h2>ASD Focus Mode</h2>
+    <select id="timer">
+        <option value="0">Sin límite</option>
+        <option value="5">5 minutos</option>
+        <option value="30">30 minutos</option>
+        <option value="60">1 hora</option>
+    </select><br>
+    <button id="toggleBtn">Cargando...</button>
+    <p id="statusText"></p>
 
-    <button id="on-extension">Iniciar</button>
+    <h3>Sitios bloqueados</h3>
+<ul id="listaSitios"></ul>
+<input type="text" id="nuevoSitio" placeholder="Ej: reddit.com" />
+<button id="agregarSitio">Agregar</button>
 
-    <script src="script.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>
